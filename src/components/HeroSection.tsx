@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { MapPin, Download } from "lucide-react";
 import heroImage from "@/assets/mcmbaye.jpeg";
 
 const HeroSection = () => {
@@ -81,37 +82,60 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right - Photo card */}
+        {/* Right - Photo card + info cards */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="flex justify-center md:justify-end"
+          className="flex flex-col items-center md:items-end gap-4"
         >
+          {/* Main photo */}
           <div className="relative w-80 md:w-[420px]">
-            {/* Image with rounded corners */}
             <div className="rounded-2xl overflow-hidden shadow-[0_20px_60px_-15px_hsl(var(--highlight)/0.15)]">
               <img
                 src={heroImage}
                 alt="McMBAYE - Développeur Full-Stack"
                 className="w-full h-[400px] md:h-[500px] object-cover object-top"
               />
-              {/* Gradient overlay at top */}
+              {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-transparent to-transparent rounded-2xl" />
             </div>
 
-            {/* Name overlay card */}
+            {/* Name overlay */}
             <div className="absolute top-4 left-4 right-4">
-              <h3 className="text-lg font-heading font-bold text-white">
+              <h3 className="text-lg font-heading font-bold text-white drop-shadow-md">
                 McMBAYE
               </h3>
-              <p className="text-sm text-white/80">
+              <p className="text-sm text-white/80 drop-shadow-md">
                 Développeur Full-Stack
               </p>
               <div className="inline-flex items-center gap-1.5 mt-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-xs text-white/90">Disponible pour nouveaux projets</span>
               </div>
+            </div>
+          </div>
+
+          {/* Info cards row */}
+          <div className="flex gap-3 w-80 md:w-[420px]">
+            {/* Location card */}
+            <div className="flex-1 rounded-xl border border-border bg-card p-4 flex flex-col gap-2">
+              <div className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground">
+                <MapPin size={18} />
+              </div>
+              <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Base</span>
+              <span className="text-sm font-semibold text-foreground">Sénégal</span>
+            </div>
+
+            {/* CV card */}
+            <div className="flex-1 rounded-xl border border-highlight/30 bg-highlight/10 p-4 flex flex-col gap-2">
+              <div className="w-9 h-9 rounded-lg bg-highlight/20 flex items-center justify-center text-highlight">
+                <Download size={18} />
+              </div>
+              <span className="text-[10px] uppercase tracking-widest text-highlight/70 font-medium">CV</span>
+              <a href="#contact" className="text-sm font-semibold text-highlight hover:underline">
+                Télécharger
+              </a>
             </div>
           </div>
         </motion.div>
