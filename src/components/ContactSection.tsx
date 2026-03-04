@@ -116,7 +116,7 @@ const ContactSection = () => {
             <Linkedin size={18} /> LinkedIn
           </a>
           <a
-            href="https://instagram.com"
+            href="https://instagram.com/mcmbaye7"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
