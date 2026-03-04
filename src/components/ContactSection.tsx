@@ -129,6 +129,7 @@ const ContactSection = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
+            <Youtube size={18} /> YouTube
           </a>
         </motion.div>
       </div>
