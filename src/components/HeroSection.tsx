@@ -71,7 +71,7 @@ const HeroSection = () => {
               <img
                 src={heroImage}
                 alt="McMBAYE - Développeur Full-Stack"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
               {/* Soft gradient overlay on edges */}
               <div className="absolute inset-0 rounded-full shadow-[inset_0_0_30px_10px_hsl(var(--background)/0.3)]" />
