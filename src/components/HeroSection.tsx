@@ -48,13 +48,35 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="flex justify-center md:justify-end"
         >
-          <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src={heroImage}
-              alt="McMBAYE - Développeur Full-Stack"
-              className="w-full h-full object-cover"
+          <div className="relative">
+            {/* Decorative animated ring */}
+            <motion.div
+              className="absolute -inset-4 rounded-full bg-gradient-to-br from-highlight/20 via-secondary to-highlight/10 blur-sm"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
+            {/* Decorative dots */}
+            <motion.div
+              className="absolute -top-6 -right-6 w-12 h-12 rounded-full bg-highlight/10"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
+            <motion.div
+              className="absolute -bottom-4 -left-4 w-8 h-8 rounded-full bg-highlight/15"
+              animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.7, 0.4] }}
+              transition={{ duration: 4, repeat: Infinity }}
+            />
+            {/* Image container with faded borders */}
+            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden ring-4 ring-border/40 shadow-[0_20px_60px_-15px_hsl(var(--highlight)/0.15)]">
+              <img
+                src={heroImage}
+                alt="McMBAYE - Développeur Full-Stack"
+                className="w-full h-full object-cover"
+              />
+              {/* Soft gradient overlay on edges */}
+              <div className="absolute inset-0 rounded-full shadow-[inset_0_0_30px_10px_hsl(var(--background)/0.3)]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-background/10" />
+            </div>
           </div>
         </motion.div>
       </div>
